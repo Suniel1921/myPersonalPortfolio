@@ -2,9 +2,9 @@
   "name": "personal-portfolio-website",
   "version": "1.0.0",
   "description": "This is my personal portfolio website using node js and mongodb ",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "node": "server.js"
+    "start": " node server.js"
   },
   "repository": {
     "type": "git",
