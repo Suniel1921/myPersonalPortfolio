@@ -4,7 +4,7 @@
   "description": "This is my personal portfolio website using node js and mongodb ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "node" : "server.js"   
   },
   "repository": {
     "type": "git",
