@@ -19,7 +19,7 @@ app.use(express.static(publicPath))
 
 
 
-app.use('', routes);
+// app.use('', routes);
 
 
 
@@ -27,6 +27,67 @@ app.use('', routes);
 app.set('view engine', 'hbs');
 app.set('views', 'views')
 hbs.registerPartials("views/partials");
+
+
+
+///////////////////////////////////////////////////////
+
+
+
+app.get("/",(req, res)=>{
+    res.render("index")
+})
+
+app.get('/about',(req,res)=>{
+    res.render("about");
+})
+
+app.get('/contact',(req,res)=>{
+    res.render("contact");
+})
+
+app.get('/project',(req,res)=>{
+    res.render("project");
+})
+
+app.get('/services',(req,res)=>{
+    res.render("services");
+})
+
+
+
+
+
+
+app.post('/contact', async (req, res)=>{
+    try{
+        const userDatails = new Users(req.body);
+       await userDatails.save();
+        res.status(500).render("index")
+        // res.status(500).send("<h4>your form is successfully submitted !</h4>")
+    }
+    catch(error){
+        res.status(201).send(`your form is not submit 😂! Please fill the all Details `);
+
+    }
+   
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.listen(PORT, (req, res)=>{
     console.log(`Server is running on port no : ${PORT}`);
