@@ -10,6 +10,7 @@ const Users = require ('./models/userData');
 
 
 const PORT = process.env.PORT || 4000;
+const hostname = '0.0.0.0';
 
 app.use(express.urlencoded({extended: false})); // with the help this you can get your data
 
@@ -90,5 +91,5 @@ app.post('/contact', async (req, res)=>{
 
 
 app.listen(PORT, (req, res)=>{
-    console.log(`Server is running on port no : ${PORT}`);
+    console.log(`Server is running on port at http:// ${hostname} :${PORT}`);
 })
